@@ -1,5 +1,6 @@
 package br.com.projuris.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +13,11 @@ import br.com.projuris.service.MyFindArray;
 @RequestMapping("/find-array")
 public class FindArrayController  {
 
-	private MyFindArray myFindArray = new MyFindArray();
+	@Autowired
+	private MyFindArray myFindArray;
 	
 	@PostMapping
 	public int findArray(@RequestBody FindArray data) {		
-		return myFindArray.findArray(data.getMainArray(), data.getSubArray());		
+		return this.myFindArray.findArray(data.getMainArray(), data.getSubArray());		
 	}
 }

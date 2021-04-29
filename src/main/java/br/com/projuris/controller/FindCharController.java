@@ -1,5 +1,6 @@
 package br.com.projuris.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +12,11 @@ import br.com.projuris.service.MyFindChar;
 @RequestMapping("/find-char")
 public class FindCharController  {
 
-	private MyFindChar myFindChar = new MyFindChar();
+	@Autowired
+	private MyFindChar myFindChar;
 	
 	@PostMapping
 	public char findArray(@RequestBody String word) {		
-		return myFindChar.findChar(word);		
+		return this.myFindChar.findChar(word);		
 	}
 }
