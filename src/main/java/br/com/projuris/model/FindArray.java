@@ -1,5 +1,8 @@
 package br.com.projuris.model;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel("Find Array")
 public class FindArray {
 	private int[] mainArray;
 	private int[] subArray;

@@ -12,8 +12,11 @@ import br.com.projuris.model.CustoCargo;
 import br.com.projuris.model.CustoDepartamento;
 import br.com.projuris.model.Funcionario;
 import br.com.projuris.service.MyCalculo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(value = "CalculoController")
 @RequestMapping("/calculo")
 public class CalculoController {
 	
@@ -21,11 +24,13 @@ public class CalculoController {
 	private MyCalculo myCalculo;
 	
 	@PostMapping(path = "/cargo")
+	@ApiOperation(value = "Given a list of employees, returns the total cost per job position")
 	public List<CustoCargo> calculoCustoCargo(@RequestBody List<Funcionario> body){
 		return this.myCalculo.custoPorCargo(body);
 	}
 	
 	@PostMapping(path = "/departamento")
+	@ApiOperation(value = "Given a list of employees, returns the total cost per department")
 	public List<CustoDepartamento> calculoCustoDepartamento(@RequestBody List<Funcionario> body){
 		return this.myCalculo.custoPorDepartamento(body);
 	}

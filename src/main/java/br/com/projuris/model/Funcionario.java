@@ -2,7 +2,11 @@ package br.com.projuris.model;
 
 import java.math.BigDecimal;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel("Employees")
 public class Funcionario {
+	
 	private String cargo;
 	private String departamento;
 	private BigDecimal salario;

@@ -2,6 +2,9 @@ package br.com.projuris.model;
 
 import java.math.BigDecimal;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel("Cost per department")
 public class CustoDepartamento {
 	private String departamento;
 	private BigDecimal custo;
