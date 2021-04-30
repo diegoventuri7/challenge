@@ -3,7 +3,7 @@
 Backend challenge for ProJuris with Spring Boot
 
 ## Requirements
-- Java version 8
+- Java version 11
 - Maven 
 
 ## Quick start
